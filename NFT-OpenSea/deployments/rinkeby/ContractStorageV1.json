@@ -1,0 +1,164 @@
+{
+  "address": "0x3cE284A9CeaDc34743590e1952aa86997D744C02",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "var_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getStringVar",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "val",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "var_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getUintVar",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "val",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "var_name",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "var_value",
+          "type": "string"
+        }
+      ],
+      "name": "setStringVar",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "var_name",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "var_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "setUintVar",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x5a6574182dee33dfc610b8b9e76f9adfb44234115ac6058461e1e386a0c160b9",
+  "receipt": {
+    "to": null,
+    "from": "0x174DD58d4faDb7D76f6B99f44710cd0eDf20FC62",
+    "contractAddress": "0x3cE284A9CeaDc34743590e1952aa86997D744C02",
+    "transactionIndex": 31,
+    "gasUsed": "356446",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xe37f563fb899d57ad9a87d3927380a303413384664fe978ea1693a70cdf40636",
+    "transactionHash": "0x5a6574182dee33dfc610b8b9e76f9adfb44234115ac6058461e1e386a0c160b9",
+    "logs": [],
+    "blockNumber": 10171643,
+    "cumulativeGasUsed": "14052073",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "77606126334b5d2e36d235a4b4651592",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"var_name\",\"type\":\"bytes32\"}],\"name\":\"getStringVar\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"val\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"var_name\",\"type\":\"bytes32\"}],\"name\":\"getUintVar\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"val\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"var_name\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"var_value\",\"type\":\"string\"}],\"name\":\"setStringVar\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"var_name\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"var_value\",\"type\":\"uint256\"}],\"name\":\"setUintVar\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implements voting process along with vote delegation\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Ballot\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ContractStorageV1.sol\":\"ContractStorageV1\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/ContractStorageV1.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-3.0\\npragma solidity >=0.7.0 <0.9.0;\\n    /** \\n    * @title Ballot\\n    * @dev Implements voting process along with vote delegation\\n    */\\n    contract ContractStorageV1 {\\n       \\n       mapping(bytes32 => uint) uintVaraibale;\\n       mapping(bytes32 => string) stringVaraibale;\\n    function setUintVar(bytes32 var_name, uint var_value) public {\\n        uintVaraibale[var_name]= var_value;\\n    }\\n    function getUintVar(bytes32 var_name) public view returns(uint val){\\n        return uintVaraibale[var_name];\\n    }\\n\\n\\n    function setStringVar (bytes32 var_name, string calldata var_value) public {\\n        stringVaraibale[var_name]= var_value;\\n    }\\n    function getStringVar(bytes32 var_name) public view returns(string memory val){\\n        return stringVaraibale[var_name];\\n    }\\n    }\\n\\nlibrary ContractLib{\\n\\n    function setUintValue( address _contractStorage,string calldata var_name, uint var_value) public{\\n        ContractStorageV1(_contractStorage).setUintVar(keccak256(bytes (var_name)), var_value);\\n    }\\n    function getUintValue( address _contractStorage,string calldata var_name) public view returns(uint){\\n        return  ContractStorageV1(_contractStorage).getUintVar(keccak256(bytes (var_name)));\\n    }\\n\\n\\n\\n    function setStringValue( address _contractStorage,string calldata var_name, string calldata var_value) public{\\n        ContractStorageV1(_contractStorage).setStringVar(keccak256(bytes (var_name)), var_value);\\n    }\\n    function getStringValue( address _contractStorage,string memory var_name) public view returns(string memory){\\n        return  ContractStorageV1(_contractStorage).getStringVar(keccak256(bytes (var_name)));\\n    }\\n}\\n\",\"keccak256\":\"0x165c05eb16006d644069110dc2901f0c9001a2ee5c883e4832feb7efe50e99e6\",\"license\":\"GPL-3.0\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061057f806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80635b25265014610051578063612c8f7f1461006d5780637037399a1461009d578063b70da9ed146100b9575b600080fd5b61006b6004803603810190610066919061032d565b6100e9565b005b61008760048036038101906100829190610304565b610111565b604051610094919061042b565b60405180910390f35b6100b760048036038101906100b29190610385565b61012d565b005b6100d360048036038101906100ce9190610304565b610148565b6040516100e09190610409565b60405180910390f35b818160016000868152602001908152602001600020919061010b9291906101ed565b50505050565b6000806000838152602001908152602001600020549050919050565b80600080848152602001908152602001600020819055505050565b6060600160008381526020019081526020016000208054610168906104a9565b80601f0160208091040260200160405190810160405280929190818152602001828054610194906104a9565b80156101e15780601f106101b6576101008083540402835291602001916101e1565b820191906000526020600020905b8154815290600101906020018083116101c457829003601f168201915b50505050509050919050565b8280546101f9906104a9565b90600052602060002090601f01602090048101928261021b5760008555610262565b82601f1061023457803560ff1916838001178555610262565b82800160010185558215610262579182015b82811115610261578235825591602001919060010190610246565b5b50905061026f9190610273565b5090565b5b8082111561028c576000816000905550600101610274565b5090565b60008135905061029f8161051b565b92915050565b60008083601f8401126102b757600080fd5b8235905067ffffffffffffffff8111156102d057600080fd5b6020830191508360018202830111156102e857600080fd5b9250929050565b6000813590506102fe81610532565b92915050565b60006020828403121561031657600080fd5b600061032484828501610290565b91505092915050565b60008060006040848603121561034257600080fd5b600061035086828701610290565b935050602084013567ffffffffffffffff81111561036d57600080fd5b610379868287016102a5565b92509250509250925092565b6000806040838503121561039857600080fd5b60006103a685828601610290565b92505060206103b7858286016102ef565b9150509250929050565b60006103cc82610446565b6103d68185610451565b93506103e6818560208601610476565b6103ef8161050a565b840191505092915050565b6104038161046c565b82525050565b6000602082019050818103600083015261042381846103c1565b905092915050565b600060208201905061044060008301846103fa565b92915050565b600081519050919050565b600082825260208201905092915050565b6000819050919050565b6000819050919050565b60005b83811015610494578082015181840152602081019050610479565b838111156104a3576000848401525b50505050565b600060028204905060018216806104c157607f821691505b602082108114156104d5576104d46104db565b5b50919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b6000601f19601f8301169050919050565b61052481610462565b811461052f57600080fd5b50565b61053b8161046c565b811461054657600080fd5b5056fea26469706673582212203d31012f0fa86baab89dbc4dd1dd2f9a8b66bac6c7bd0861a55fc16457581ee064736f6c63430008040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80635b25265014610051578063612c8f7f1461006d5780637037399a1461009d578063b70da9ed146100b9575b600080fd5b61006b6004803603810190610066919061032d565b6100e9565b005b61008760048036038101906100829190610304565b610111565b604051610094919061042b565b60405180910390f35b6100b760048036038101906100b29190610385565b61012d565b005b6100d360048036038101906100ce9190610304565b610148565b6040516100e09190610409565b60405180910390f35b818160016000868152602001908152602001600020919061010b9291906101ed565b50505050565b6000806000838152602001908152602001600020549050919050565b80600080848152602001908152602001600020819055505050565b6060600160008381526020019081526020016000208054610168906104a9565b80601f0160208091040260200160405190810160405280929190818152602001828054610194906104a9565b80156101e15780601f106101b6576101008083540402835291602001916101e1565b820191906000526020600020905b8154815290600101906020018083116101c457829003601f168201915b50505050509050919050565b8280546101f9906104a9565b90600052602060002090601f01602090048101928261021b5760008555610262565b82601f1061023457803560ff1916838001178555610262565b82800160010185558215610262579182015b82811115610261578235825591602001919060010190610246565b5b50905061026f9190610273565b5090565b5b8082111561028c576000816000905550600101610274565b5090565b60008135905061029f8161051b565b92915050565b60008083601f8401126102b757600080fd5b8235905067ffffffffffffffff8111156102d057600080fd5b6020830191508360018202830111156102e857600080fd5b9250929050565b6000813590506102fe81610532565b92915050565b60006020828403121561031657600080fd5b600061032484828501610290565b91505092915050565b60008060006040848603121561034257600080fd5b600061035086828701610290565b935050602084013567ffffffffffffffff81111561036d57600080fd5b610379868287016102a5565b92509250509250925092565b6000806040838503121561039857600080fd5b60006103a685828601610290565b92505060206103b7858286016102ef565b9150509250929050565b60006103cc82610446565b6103d68185610451565b93506103e6818560208601610476565b6103ef8161050a565b840191505092915050565b6104038161046c565b82525050565b6000602082019050818103600083015261042381846103c1565b905092915050565b600060208201905061044060008301846103fa565b92915050565b600081519050919050565b600082825260208201905092915050565b6000819050919050565b6000819050919050565b60005b83811015610494578082015181840152602081019050610479565b838111156104a3576000848401525b50505050565b600060028204905060018216806104c157607f821691505b602082108114156104d5576104d46104db565b5b50919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b6000601f19601f8301169050919050565b61052481610462565b811461052f57600080fd5b50565b61053b8161046c565b811461054657600080fd5b5056fea26469706673582212203d31012f0fa86baab89dbc4dd1dd2f9a8b66bac6c7bd0861a55fc16457581ee064736f6c63430008040033",
+  "devdoc": {
+    "details": "Implements voting process along with vote delegation",
+    "kind": "dev",
+    "methods": {},
+    "title": "Ballot",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 2699,
+        "contract": "contracts/ContractStorageV1.sol:ContractStorageV1",
+        "label": "uintVaraibale",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      },
+      {
+        "astId": 2703,
+        "contract": "contracts/ContractStorageV1.sol:ContractStorageV1",
+        "label": "stringVaraibale",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_string_storage)"
+      }
+    ],
+    "types": {
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_bytes32,t_string_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => string)",
+        "numberOfBytes": "32",
+        "value": "t_string_storage"
+      },
+      "t_mapping(t_bytes32,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

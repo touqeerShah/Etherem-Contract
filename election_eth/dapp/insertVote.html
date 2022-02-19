@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src="./node_modules/web3/dist/web3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/config/web3_config.js"></script>
+        <script type="text/javascript" src="./js/config/contract_config.js"></script>
+        <script type="text/javascript" src="./js/operations/insertVote.js"></script>
+        
+    </header>
+    <body>
+    <h5>Insert Vote </h5>
+    <div>
+        <ul>
+            <li>
+                <a href="newCandidate.html">New Candidate</a>
+            </li>
+            <li>
+                <a href="viewParties.html">View All Parties</a>
+            </li>
+            <li>
+                <a href="insertVote.html">Insert Vote</a>
+            </li>
+            <li>
+                <a href="viewVote.html">View Vote</a>
+            </li>
+            <li>
+                <a href="verifyVote.html">Verify Vote</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form action="/action_page.php">
+            <label for="">Parties name:</label>
+            <select name="partiesName" id="partiesName">
+            </select>
+            <label for="nic">NIC:</label>
+            <input type="text" id="nic" name="nic"><br><br>
+
+            <label for="nic">Voter Ethereum Account:</label>
+            <input type="text" id="ethAccount" name="ethAccount" readonly><br><br>
+            <input type="button" value="Cast Vote" onclick="onSubmitForm();">
+
+        </form>
+        <div>
+            <h2>Result :</h2>
+            <div id="result" style="color: green;"></div>
+        </div>
+    </div>
+    </body>
+</html>
