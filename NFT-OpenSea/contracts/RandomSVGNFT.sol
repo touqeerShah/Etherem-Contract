@@ -126,7 +126,6 @@ contract RandomSVGNFT is ERC721URIStorage, VRFConsumerBase, helperContract {
         }
 
         finalSVG = string(abi.encodePacked(finalSVG, "</svg>"));
-
     }
 
     function generatePath(uint256 randomNumber)
